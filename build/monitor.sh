@@ -42,7 +42,7 @@ docker events \
 while read -r name; do
   # only stop if it's in our DEPENDANT list and MONITOR is down
   if [[ " $DEPENDANT " == *" $name "* ]] && [[ -z "$(is_up)" ]]; then
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] Attempted to start $name but $MONITOR is down → stopping it"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $name attempted to start but $MONITOR is down → stopping it"
     docker stop "$name" || true
   fi
 done &
