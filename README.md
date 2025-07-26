@@ -28,7 +28,7 @@ All other behaviour (listening to Docker events, parsing JSON) is built into the
 
 ## Usage
 
-<code>
+'''
 docker run -d \
   --name watchdog-sidecar \
   -v /var/run/docker.sock:/var/run/docker.sock \
@@ -37,7 +37,7 @@ docker run -d \
   -e GRACE="10" \
   --restart unless-stopped \
   docker-monitor:latest
-</code>
+'''
 
 -v /var/run/docker.sock:/var/run/docker.sock
 Grants the sidecar access to Docker events and CLI on the host.
