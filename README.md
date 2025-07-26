@@ -32,7 +32,7 @@ All other behaviour (listening to Docker events, parsing JSON) is built into the
 docker run -d \
   --name [container]-monitor \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  -e MONITOR="my-critical-service" \
+  -e MONITOR="my-critical-container" \
   -e DEPENDANT="worker-1 worker-2 ui-service" \
   -e GRACE="10" \
   --restart unless-stopped \
