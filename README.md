@@ -36,7 +36,7 @@ docker run -d \
   -e DEPENDANT="worker-1 worker-2 ui-service" \
   -e GRACE="10" \
   --restart unless-stopped \
-  chrisjbawden/dependency-watchdog:latest
+  chrisjbawden/dependson:latest
 ```
 
 
