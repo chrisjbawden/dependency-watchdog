@@ -28,6 +28,7 @@ All other behaviour (listening to Docker events, parsing JSON) is built into the
 
 ## Usage
 
+<code>
 docker run -d \
   --name watchdog-sidecar \
   -v /var/run/docker.sock:/var/run/docker.sock \
@@ -36,7 +37,7 @@ docker run -d \
   -e GRACE="10" \
   --restart unless-stopped \
   docker-monitor:latest
-
+</code>
 
 -v /var/run/docker.sock:/var/run/docker.sock
 Grants the sidecar access to Docker events and CLI on the host.
@@ -50,13 +51,13 @@ Ensures your watchdog will relaunch automatically if it crashes or the host rebo
 ## Behaviour in action
 
 1. On container start
-  > Sidecar checks if ${MONITOR} is running.
-  > If not, it stops any ${DEPENDANT} immediately.
+  * Sidecar checks if ${MONITOR} is running.
+  * If not, it stops any ${DEPENDANT} immediately.
 
 2. When ${MONITOR} dies
-  > Emits a log message, waits ${GRACE} seconds.
-  > Stops each container in ${DEPENDANT}.
+  * Emits a log message, waits ${GRACE} seconds.
+  * Stops each container in ${DEPENDANT}.
 
 3. If someone (or Docker’s restart policy) tries to start a ${DEPENDANT}
-  > Sidecar detects the start event.
-  > If ${MONITOR} is still down, it shuts that container down again.
+  * Sidecar detects the start event.
+  * If ${MONITOR} is still down, it shuts that container down again.
