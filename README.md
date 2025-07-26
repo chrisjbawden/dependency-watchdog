@@ -1,6 +1,6 @@
-# docker-monitor (watchdog‑sidecar)
+# dependson
 
-A lightweight “sidecar” Docker container that watches a **primary** container and enforces ad‑hoc “depends on” behaviour: if your monitored service goes offline, any listed dependents are stopped (and prevented from starting until it’s back up).
+A lightweight “sidecar” Docker container that watches a **primary** container and enforces ad‑hoc “depends on” behaviour - if your monitored container goes offline, any listed dependents are stopped (and prevented from starting until it’s back up).
 
 ---
 
