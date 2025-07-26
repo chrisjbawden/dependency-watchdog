@@ -17,6 +17,8 @@ is_up() {
     --quiet
 }
 
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Monitoring started for - $MONITOR"
+
 # 1) On startup: if MONITOR isn’t up, stop all dependants immediately
 if [[ -z "$(is_up)" ]]; then
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] $MONITOR is not running → stopping dependants"
