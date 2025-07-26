@@ -1,5 +1,5 @@
 # Use Docker-in-Docker image for Docker CLI + bash
-FROM docker:24.0.10-dind
+FROM docker:dind
 
 # Install jq (for JSON parsing) & bash
 RUN apk add --no-cache bash jq
