@@ -30,13 +30,13 @@ All other behaviour (listening to Docker events, parsing JSON) is built into the
 
 ```
 docker run -d \
-  --name watchdog-sidecar \
+  --name [container]-monitor \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -e MONITOR="my-critical-service" \
   -e DEPENDANT="worker-1 worker-2 ui-service" \
   -e GRACE="10" \
   --restart unless-stopped \
-  docker-monitor:latest
+  chrisjbawden/dependency-watchdog:latest
 ```
 
 
