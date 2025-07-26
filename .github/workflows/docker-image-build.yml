@@ -38,5 +38,5 @@ jobs:
           file: ./build/Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/dependency-watchdog:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/dependency-watchdog:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/dependson:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/dependson:${{ github.sha }}
