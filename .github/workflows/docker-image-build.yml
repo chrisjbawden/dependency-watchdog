@@ -38,5 +38,5 @@ jobs:
           file: ./build/Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/watchdog-sidecar:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/watchdog-sidecar:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/dependency-watchdog:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/dependency-watchdog:${{ github.sha }}
