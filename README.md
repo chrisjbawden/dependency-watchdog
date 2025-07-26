@@ -43,8 +43,11 @@ docker run -d \
 -v /var/run/docker.sock:/var/run/docker.sock
 Grants the sidecar access to Docker events and CLI on the host.
 
--e MONITOR="…", -e DEPENDANT="…"
-Configure which container to watch and which to guard.
+-e MONITOR="…"
+Cofnigure which contained to monitor/watch
+
+-e DEPENDANT="…"
+Configure which container/s to control in response to changes in the container being monitored.
 
 --restart unless-stopped
 Ensures your watchdog will relaunch automatically if it crashes or the host reboots.
